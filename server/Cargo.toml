@@ -1,0 +1,12 @@
+[package]
+name = "server"
+version = "0.1.0"
+authors = ["develon <develon@qq.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rouille = "3.5.0"               # High-level idiomatic web framework.
+base64 = "0.20.0-alpha.1"      # encodes and decodes base64 as bytes or utf8
+form_urlencoded = "1.0.1"          # Parser and serializer for the application/x-www-form-urlencoded syntax, as used by HTML form…
