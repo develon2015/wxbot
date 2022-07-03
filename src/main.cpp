@@ -7,7 +7,10 @@ void SendText(HWND hwnd, LPCWSTR text)
     for (int i = 0; i < le; i++)
     {
         SendMessageW(hwnd, WM_CHAR, (WPARAM)text[i], (LPARAM)0);
+        Sleep(1);
     }
+    SendMessageW(hwnd, WM_CHAR, (WPARAM)L'\0', (LPARAM)0);
+    Sleep(200);
     SendMessageW(hwnd, WM_KEYDOWN, (WPARAM)VK_RETURN, (LPARAM)0);
 }
 
