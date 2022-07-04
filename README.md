@@ -19,9 +19,9 @@ msg需要使用Base64编码, 再使用URI编码
 ```
 * 发起语音通话
 ```
-GET /?passwd=test&audio
+GET /?passwd=test&audio=
 ```
 * 发起视频通话
 ```
-GET /?passwd=test&audio
+GET /?passwd=test&video=
 ```
