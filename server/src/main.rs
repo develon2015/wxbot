@@ -55,8 +55,8 @@ fn main() {
 #[link(name = "Z:\\Github\\wxbot\\build\\Release\\wxbot", kind = "static")]
 extern "C" {
     fn wx_send(text: *const u16);
-    // fn wx_audio();
-    // fn wx_video();
+    fn wx_audio();
+    fn wx_video();
 }
 
 fn serv(host: &str, port: u16) {
@@ -72,6 +72,16 @@ fn serv(host: &str, port: u16) {
             }
         } else {
             return err();
+        }
+
+        if let Some(_) = request.get_param("audio") {
+            unsafe { wx_audio() };
+            return rouille::Response::empty_204();
+        }
+
+        if let Some(_) = request.get_param("video") {
+            unsafe { wx_video() };
+            return rouille::Response::empty_204();
         }
 
         // URI解码
