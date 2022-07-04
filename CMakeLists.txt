@@ -14,5 +14,5 @@ add_compile_options($<$<CONFIG:Release>:/MT>) #LIBCMT.lib
 
 file(GLOB_RECURSE sources RELATIVE ${CMAKE_HOME_DIRECTORY} src/*.c src/*.cpp)
 message(STATUS "编译代码: ${sources}")
-add_executable(wxbot ${sources})
-# add_library(wxbot STATIC ${sources})
+# add_executable(wxbot ${sources})
+add_library(wxbot STATIC ${sources})

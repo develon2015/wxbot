@@ -151,7 +151,7 @@ extern "C" DllExport void wx_video()
     CallVideo(chatWnd);
 }
 
-int main()
+int _main()
 {
     wx_send(LR"(
         你
