@@ -98,7 +98,10 @@ fn serv(host: &str, port: u16) {
         println!("发送消息: {}", msg);
         unsafe {
             let msg = msg.encode_utf16();
-            let msg = msg.collect::<Vec<u16>>();
+            let mut msg = msg.collect::<Vec<u16>>();
+            // 加上结束符L'\0'
+            msg.push(0);
+            msg.push(0);
             wx_send(msg.as_ptr());
         }
 
